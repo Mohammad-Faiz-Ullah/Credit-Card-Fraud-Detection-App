@@ -1,1 +1,51 @@
-# Credit-Card-Fraud-Detection-App
+# 💳 Credit Card Fraud Detection App
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
+## 📖 Project Overview
+This application uses a trained machine learning model to detect potential credit card fraud. It analyzes transaction patterns to classify activities as either **Legit** or **Fraud**, helping to mitigate financial risk in real-time or through batch processing.
+
+---
+
+## 🔍 How It Works
+
+### 1️⃣ Prediction Logic
+The model evaluates each transaction and outputs a specific **fraud probability** between `0` and `1`. A decision threshold is then applied to classify the transaction:
+
+* **Probability $\ge$ Threshold** $\rightarrow$ **Fraud** 🔴
+* **Probability < Threshold** $\rightarrow$ **Legit** 🟢
+
+### 2️⃣ Predicted vs. Actual Fraud Counts
+You may observe that the model flags more transactions as fraud than the number of confirmed frauds in the original dataset.
+
+* **Original Dataset:** 492 confirmed fraud transactions.
+* **Model Prediction:** ~721 transactions flagged as fraud (at threshold `0.5`).
+
+#### 💡 Why is this expected?
+This is a deliberate design choice to prioritize **Safety**.
+* The model allows for **False Positives** (flagging a legit transaction as suspicious) to minimize **False Negatives** (missing an actual fraud).
+* In banking systems, it is operationally safer to flag a suspicious transaction for manual review than to let a fraudulent transaction pass unnoticed.
+
+### 3️⃣ Threshold Selection (Important)
+The system allows you to adjust the decision threshold based on your risk tolerance:
+
+| Threshold | Effect | Use Case |
+| :--- | :--- | :--- |
+| **0.3** | **High Sensitivity** | Higher recall (catches more fraud) but triggers more alerts. |
+| **0.5** | **Balanced Approach** | Default setting. Balances precision and recall. |
+| **> 0.5** | **High Precision** | Fewer alerts, but higher risk of missing actual fraud. |
+
+> **Note:** In real-world production systems, thresholds are tuned based on operational costs and specific risk policies.
+
+---
+
+## 📂 Data & Input Format
+
+### 4️⃣ Batch CSV Upload Format
+To perform batch fraud detection, upload a `.csv` file with the following column structure:
+
+```csv
+time, v1, v2, ..., v28, amount
+```
