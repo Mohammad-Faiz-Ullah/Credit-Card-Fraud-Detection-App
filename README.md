@@ -6,7 +6,11 @@
 
 ## 📖 Project Overview
 This application uses a trained machine learning model to detect potential credit card fraud. It analyzes transaction patterns to classify activities as either **Legit** or **Fraud**, helping to mitigate financial risk in real-time or through batch processing.
+---
+This repository contains a deployed machine learning application for detecting fraudulent credit card transactions using a trained Random Forest classifier.
+The project demonstrates a complete ML workflow: model training → evaluation → deployment → real-time & batch inference.
 
+🔗 Live Demo: https://credit-card-fraud-detection-app-8uwp4pgd2gz559coaqugdz.streamlit.app/
 ---
 
 ## 🔍 How It Works
@@ -63,7 +67,7 @@ The application will process the file and append the following columns to your d
 * prediction (Fraud / Legit)
 
 ### 5️⃣ Sample CSV for Testing
-A small sample CSV is provided within the repository so users and recruiters can test the application immediately without needing to clean their own data.
+A small sample CSV is provided within the repository (sample_test.csv) so users and recruiters can test the application immediately without needing to clean their own data.
 
 * The sample follows the required column structure.
 
