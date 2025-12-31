@@ -69,7 +69,7 @@ The application will process the file and append the following columns to your d
 * prediction (Fraud / Legit)
 
 ### 5️⃣ Sample CSV for Testing
-A small sample CSV is provided within the repository (sample_test.csv) so users and recruiters can test the application immediately without needing to clean their own data.
+A small sample CSV is provided within the repository (**sample_test.csv**) so users and recruiters can test the application immediately without needing to clean their own data.
 
 * The sample follows the required column structure.
 
