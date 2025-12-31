@@ -49,3 +49,29 @@ To perform batch fraud detection, upload a `.csv` file with the following column
 ```csv
 time, v1, v2, ..., v28, amount
 ```
+
+#### 📋 Guidelines
+* ❌ Do not include the class (label) column.
+
+* ✅ Each row is treated as a new, unseen transaction.
+
+#### 📤 Output
+The application will process the file and append the following columns to your data:
+
+* fraud_probability
+
+* prediction (Fraud / Legit)
+
+### 5️⃣ Sample CSV for Testing
+A small sample CSV is provided within the repository so users and recruiters can test the application immediately without needing to clean their own data.
+
+* The sample follows the required column structure.
+
+* It is intended for **demonstration purposes only.**
+
+### ✅ Summary
+* **Safety First:** A higher predicted fraud count is normal; the system prioritizes safety over silence.
+
+* **Flexible Control:** Threshold adjustments allow for realistic, business-driven decision-making.
+
+* **Dual Modes:** The app supports both real-time and batch fraud detection.
